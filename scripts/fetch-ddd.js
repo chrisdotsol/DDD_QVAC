@@ -1,4 +1,4 @@
-// scripts/fetch-ddd.js — refresh local JSON under data/ from Solana RPC (optional oracle account read).
+// intelligence/scripts/fetch-ddd.js — same behavior as repo-root scripts/fetch-ddd.js; default data/ is intelligence/data/.
 import { Connection, PublicKey } from '@solana/web3.js';
 import fs from 'fs';
 import path from 'path';
@@ -8,14 +8,17 @@ const PROGRAM_ID = new PublicKey('AbjVyP3WaY9yMG8AT8vNcLHcNoFkT5dwT94SPQ8kddd');
 
 /** Prefer SOLANA_RPC_URL (GitHub Actions secret). Public RPC fallback is rate-limited. */
 const RPC_URL =
-  process.env.SOLANA_RPC_URL?.trim() || 'https://newest-wider-research.solana-mainnet.quiknode.pro/ff067ebc5d00daa5f59a9c23d03f098a880eec3f/';
+  process.env.SOLANA_RPC_URL?.trim() || 'https://api.mainnet-beta.solana.com';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const REPO_INTEL_ROOT = path.resolve(__dirname, '..');
-const dataDir = path.join(REPO_INTEL_ROOT, 'data');
+const defaultDataDir = path.join(path.resolve(__dirname, '..'), 'data');
+/** Override if snapshots live elsewhere (e.g. monorepo root `data/`). */
+const dataDir = process.env.DATA_DIR?.trim()
+  ? path.resolve(process.env.DATA_DIR.trim())
+  : defaultDataDir;
 
 /**
- * Seed sets to try, in order. Canonical for this repo matches snapshot-builder / knowledge docs.
+ * Seed sets to try, in order. Canonical for DDD Intelligence matches snapshot-builder / knowledge docs.
  * @type {string[][]}
  */
 const SEED_CANDIDATES = [
@@ -49,6 +52,7 @@ async function main() {
   }
 
   console.log('Fetching DDD oracle account from Solana (if deployed)...');
+  console.log('Writing data to:', dataDir);
 
   const connection = new Connection(RPC_URL, 'confirmed');
 
@@ -81,7 +85,7 @@ async function main() {
     oracle_model: 'DDD Oracle on Solana push oracle',
     pda_seeds: found ? found.seeds : ['oracle', 'chains', 'issuers', 'tokens'],
     read_status: found ? 'read_ok' : 'account_not_found',
-    source_files: ['scripts/fetch-ddd.js'],
+    source_files: ['intelligence/scripts/fetch-ddd.js'],
     rpc_endpoint_kind: process.env.SOLANA_RPC_URL?.trim() ? 'custom' : 'public_mainnet',
     ...(found && {
       oracle_pda: found.pda.toBase58(),
