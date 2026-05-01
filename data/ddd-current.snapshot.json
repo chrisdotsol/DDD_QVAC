@@ -1,0 +1,287 @@
+{
+  "generated_at": "2026-04-30T04:12:29.174Z",
+  "dataset_status": "frozen_demo_snapshot",
+  "source_files": [
+    "bot/fallback.json",
+    "bot/issuers_state.json",
+    "bot/issuers_config.json",
+    "bot/chain_rank_history.json",
+    "bot/context.json"
+  ],
+  "ddd_percent": 1.4019,
+  "stablecoin_market_cap_usd": 318031843312,
+  "us_m2_usd": 22686000000000,
+  "one_in_x": 71,
+  "last_updated": "2026-04-29T19:23:39.232Z",
+  "issuers": [
+    {
+      "name": "Tether",
+      "symbol": "USDT",
+      "market_cap_usd": 189450802882.25,
+      "share_percent": 59.5698,
+      "entity": "Tether Limited",
+      "backing_type": "fiat",
+      "last_updated": "2026-04-29T19:22:44.927Z"
+    },
+    {
+      "name": "USD Coin",
+      "symbol": "USDC",
+      "market_cap_usd": 77343177991.88,
+      "share_percent": 24.3193,
+      "entity": "Circle Internet Financial",
+      "backing_type": "fiat",
+      "last_updated": "2026-04-29T19:22:46.448Z"
+    },
+    {
+      "name": "Sky Dollar",
+      "symbol": "USDS",
+      "market_cap_usd": 7816702348.69,
+      "share_percent": 2.4578,
+      "entity": "Sky (formerly MakerDAO)",
+      "backing_type": "hybrid",
+      "last_updated": "2026-04-29T19:22:47.752Z"
+    },
+    {
+      "name": "Dai",
+      "symbol": "DAI",
+      "market_cap_usd": 4657924833.94,
+      "share_percent": 1.4646,
+      "entity": "Sky (formerly MakerDAO)",
+      "backing_type": "hybrid",
+      "last_updated": "2026-04-29T19:22:50.019Z"
+    },
+    {
+      "name": "World Liberty Financial USD",
+      "symbol": "USD1",
+      "market_cap_usd": 4475516843.13,
+      "share_percent": 1.4073,
+      "entity": null,
+      "backing_type": null,
+      "last_updated": "2026-04-29T19:22:51.186Z"
+    },
+    {
+      "name": "Ethena USDe",
+      "symbol": "USDe",
+      "market_cap_usd": 3807356769.2,
+      "share_percent": 1.1972,
+      "entity": null,
+      "backing_type": null,
+      "last_updated": "2026-04-29T19:22:52.803Z"
+    },
+    {
+      "name": "PayPal USD",
+      "symbol": "PYUSD",
+      "market_cap_usd": 3378929634.36,
+      "share_percent": 1.0625,
+      "entity": "PayPal Holdings, Inc.",
+      "backing_type": "fiat",
+      "last_updated": "2026-04-29T19:22:54.179Z"
+    },
+    {
+      "name": "Circle USYC",
+      "symbol": "USYC",
+      "market_cap_usd": 2901941765.44,
+      "share_percent": 0.9125,
+      "entity": null,
+      "backing_type": null,
+      "last_updated": "2026-04-29T19:22:55.278Z"
+    },
+    {
+      "name": "BlackRock USD",
+      "symbol": "BUIDL",
+      "market_cap_usd": 2822174672.67,
+      "share_percent": 0.8874,
+      "entity": null,
+      "backing_type": null,
+      "last_updated": "2026-04-29T19:22:56.475Z"
+    },
+    {
+      "name": "Global Dollar",
+      "symbol": "USDG",
+      "market_cap_usd": 2315733550.01,
+      "share_percent": 0.7281,
+      "entity": null,
+      "backing_type": null,
+      "last_updated": "2026-04-29T19:22:57.653Z"
+    },
+    {
+      "name": "Ondo US Dollar Yield",
+      "symbol": "USDY",
+      "market_cap_usd": 2131106304.41,
+      "share_percent": 0.6701,
+      "entity": null,
+      "backing_type": null,
+      "last_updated": "2026-04-29T19:22:58.975Z"
+    },
+    {
+      "name": "Falcon USD",
+      "symbol": "USDf",
+      "market_cap_usd": 1620492327.7,
+      "share_percent": 0.5095,
+      "entity": null,
+      "backing_type": null,
+      "last_updated": "2026-04-29T19:23:00.158Z"
+    },
+    {
+      "name": "Ripple USD",
+      "symbol": "RLUSD",
+      "market_cap_usd": 1555366639.21,
+      "share_percent": 0.4891,
+      "entity": "Ripple Labs",
+      "backing_type": "fiat",
+      "last_updated": "2026-04-29T19:23:01.261Z"
+    },
+    {
+      "name": "USDD",
+      "symbol": "USDD",
+      "market_cap_usd": 1464259790.98,
+      "share_percent": 0.4604,
+      "entity": "TRON DAO Reserve",
+      "backing_type": "crypto_collateralized",
+      "last_updated": "2026-04-29T19:23:02.674Z"
+    },
+    {
+      "name": "United Stables",
+      "symbol": "U",
+      "market_cap_usd": 1055932944.11,
+      "share_percent": 0.332,
+      "entity": null,
+      "backing_type": null,
+      "last_updated": "2026-04-29T19:23:03.675Z"
+    },
+    {
+      "name": "Ethena USDtb",
+      "symbol": "USDTB",
+      "market_cap_usd": 637532206.76,
+      "share_percent": 0.2005,
+      "entity": null,
+      "backing_type": null,
+      "last_updated": "2026-04-29T19:23:04.635Z"
+    },
+    {
+      "name": "GHO",
+      "symbol": "GHO",
+      "market_cap_usd": 583572430.42,
+      "share_percent": 0.1835,
+      "entity": null,
+      "backing_type": null,
+      "last_updated": "2026-04-29T19:23:05.865Z"
+    },
+    {
+      "name": "Usual USD",
+      "symbol": "USD0",
+      "market_cap_usd": 556651044.03,
+      "share_percent": 0.175,
+      "entity": "Usual Labs",
+      "backing_type": "rwa",
+      "last_updated": "2026-04-29T19:23:06.958Z"
+    },
+    {
+      "name": "YLDS",
+      "symbol": "YLDS",
+      "market_cap_usd": 528520436.39,
+      "share_percent": 0.1662,
+      "entity": null,
+      "backing_type": null,
+      "last_updated": "2026-04-29T19:23:07.864Z"
+    },
+    {
+      "name": "TrueUSD",
+      "symbol": "TUSD",
+      "market_cap_usd": 484055273.89,
+      "share_percent": 0.1522,
+      "entity": "Techteryx",
+      "backing_type": "fiat",
+      "last_updated": "2026-04-29T19:23:09.396Z"
+    }
+  ],
+  "chains": [
+    {
+      "name": "Ethereum",
+      "stablecoin_supply_usd": 164972285074,
+      "share_percent": 54.3152,
+      "rank": 1
+    },
+    {
+      "name": "Tron",
+      "stablecoin_supply_usd": 86968192080,
+      "share_percent": 28.6333,
+      "rank": 2
+    },
+    {
+      "name": "Solana",
+      "stablecoin_supply_usd": 15159883697,
+      "share_percent": 4.9912,
+      "rank": 3
+    },
+    {
+      "name": "BSC",
+      "stablecoin_supply_usd": 13882620236,
+      "share_percent": 4.5707,
+      "rank": 4
+    },
+    {
+      "name": "Hyperliquid L1",
+      "stablecoin_supply_usd": 5029112265,
+      "share_percent": 1.6558,
+      "rank": 5
+    },
+    {
+      "name": "Base",
+      "stablecoin_supply_usd": 4851133994,
+      "share_percent": 1.5972,
+      "rank": 6
+    },
+    {
+      "name": "Arbitrum",
+      "stablecoin_supply_usd": 3959210273,
+      "share_percent": 1.3035,
+      "rank": 7
+    },
+    {
+      "name": "Polygon",
+      "stablecoin_supply_usd": 3551194306,
+      "share_percent": 1.1692,
+      "rank": 8
+    },
+    {
+      "name": "Aptos",
+      "stablecoin_supply_usd": 1659830198,
+      "share_percent": 0.5465,
+      "rank": 9
+    },
+    {
+      "name": "Avalanche",
+      "stablecoin_supply_usd": 1416031380,
+      "share_percent": 0.4662,
+      "rank": 10
+    },
+    {
+      "name": "X Layer",
+      "stablecoin_supply_usd": 1232816885,
+      "share_percent": 0.4059,
+      "rank": 11
+    },
+    {
+      "name": "Plasma",
+      "stablecoin_supply_usd": 1048984219,
+      "share_percent": 0.3454,
+      "rank": 12
+    }
+  ],
+  "methodology_version": "stablecoin_market_cap_divided_by_us_m2",
+  "notes": [
+    {
+      "text": "US M2 expanded 4.2% YoY.",
+      "source": "auto"
+    },
+    {
+      "text": "Stablecoin market cap at $318B, above $300B for the first time.",
+      "source": "auto"
+    },
+    {
+      "text": "Led by Tether ($189B) and USD Coin ($77B).",
+      "source": "auto"
+    }
+  ]
+}

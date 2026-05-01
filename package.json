@@ -1,0 +1,24 @@
+{
+  "name": "ddd-intelligence",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Local-first QVAC research layer for Digital Dollar Dominance.",
+  "scripts": {
+    "setup:models": "node src/setup-models.js",
+    "build:snapshot": "node src/snapshot-builder.js",
+    "index:knowledge": "node src/index-knowledge.js",
+    "qvac:serve": "qvac serve openai --config qvac.config.json --host 127.0.0.1 --port 11434 --model ddd-r1-qwen --cors --verbose",
+    "qvac:test": "node src/qvac-test.js",
+    "qvac:embed:test": "node src/qvac-embed-test.js",
+    "serve:ui": "node src/static-server.js",
+    "verify:offline": "node src/offline-verify.js",
+    "test": "node --test test/guardrails.test.js test/conversation-handles.test.js test/chip-answers.test.js test/intent-answers.test.js test/example-questions.test.js test/qvac-client.test.js",
+    "prepare:demo": "npm run build:snapshot && npm run index:knowledge"
+  },
+  "dependencies": {
+    "@qvac/cli": "0.2.4",
+    "@qvac/sdk": "0.9.1"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,53 @@
+{
+  "loggerConsoleOutput": true,
+  "loggerLevel": "info",
+  "serve": {
+    "models": {
+      "ddd-r1-qwen": {
+        "src": "https://huggingface.co/unsloth/DeepSeek-R1-Distill-Qwen-7B-GGUF/resolve/097680e4eed7a83b3df6b0bb5e5134099cadf1b0/DeepSeek-R1-Distill-Qwen-7B-Q4_K_M.gguf",
+        "type": "llamacpp-completion",
+        "default": true,
+        "preload": true,
+        "config": {
+          "ctx_size": 8192,
+          "temp": 0.1,
+          "top_p": 0.8,
+          "predict": 2048,
+          "seed": 7
+        }
+      },
+      "ddd-qwen": {
+        "model": "QWEN3_600M_INST_Q4",
+        "default": false,
+        "preload": false,
+        "config": {
+          "ctx_size": 8192,
+          "temp": 0.1,
+          "top_p": 0.8,
+          "predict": 1024,
+          "seed": 7
+        }
+      },
+      "ddd-llama": {
+        "model": "LLAMA_3_2_1B_INST_Q4_0",
+        "default": false,
+        "preload": false,
+        "config": {
+          "ctx_size": 8192,
+          "temp": 0.1,
+          "top_p": 0.8,
+          "predict": 1024,
+          "seed": 7
+        }
+      },
+      "ddd-embed": {
+        "model": "GTE_LARGE_FP16",
+        "default": true,
+        "preload": false,
+        "config": {
+          "device": "cpu"
+        }
+      }
+    }
+  }
+}
