@@ -45,6 +45,8 @@ async function findOracleAccount(connection) {
 }
 
 async function main() {
+  console.log('[fetch-ddd] revision=2026-05-01 multi-seed probe; missing oracle exits 0 unless FAIL_IF_ORACLE_MISSING=1');
+
   if (!process.env.SOLANA_RPC_URL?.trim()) {
     console.warn(
       'Warning: SOLANA_RPC_URL is not set; using public mainnet RPC (rate-limited). Set a repo secret for CI.'
