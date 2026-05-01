@@ -1,32 +1,27 @@
 {
-  "generated_at": "2026-04-30T04:12:29.174Z",
-  "dataset_status": "offline_cached_solana_reference",
-  "runtime_note": "This file is local-only. It does not prove a fresh Solana RPC read during the offline demo.",
+  "generated_at": "2026-05-01T23:02:07.462Z",
+  "dataset_status": "live",
+  "runtime_note": "Account read succeeded via GitHub Actions / local script.",
   "solana_program_id": "AbjVyP3WaY9yMG8AT8vNcLHcNoFkT5dwT94SPQ8kddd",
-  "cluster": "devnet",
+  "cluster": "mainnet-beta",
   "oracle_model": "DDD Oracle on Solana push oracle",
   "pda_seeds": [
-    "oracle",
-    "chains",
-    "issuers",
-    "tokens"
+    "oracle"
   ],
-  "read_status": "not_read_during_offline_demo",
+  "read_status": "read_ok",
   "source_files": [
-    "dddoracle/README.md",
-    "intelligence/data/ddd-current.snapshot.json"
+    "intelligence/scripts/fetch-ddd.js"
   ],
+  "rpc_endpoint_kind": "public_mainnet",
+  "oracle_pda": "NAtqEH6yLhMPjh6AwbWpiBHEgBw2mAVBB83jqte1Z7V",
+  "account_lamports": 2644800,
+  "account_data_len": 252,
+  "owner": "AbjVyP3WaY9yMG8AT8vNcLHcNoFkT5dwT94SPQ8kddd",
   "cached_values": {
     "ddd_percent": 1.4019,
     "stablecoin_market_cap_usd": 318031843312,
     "us_m2_usd": 22686000000000,
     "one_in_x": 71,
-    "last_updated": "2026-04-29T19:23:39.232Z",
-    "solana_chain_share": {
-      "name": "Solana",
-      "stablecoin_supply_usd": 15159883697,
-      "share_percent": 4.9912,
-      "rank": 3
-    }
+    "last_updated": "2026-05-01T23:02:07.462Z"
   }
 }
