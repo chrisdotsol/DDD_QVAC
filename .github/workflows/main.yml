@@ -1,0 +1,69 @@
+# Hourly snapshot refresh: install deps, run Solana fetch script, commit JSON if changed.
+# Prerequisites (repo secrets):
+#   - SOLANA_RPC_URL — mainnet RPC URL (do not commit API keys in the repo).
+# Optional:
+#   - GH_TOKEN — fine-grained or classic PAT with contents:write (only if GITHUB_TOKEN cannot push, e.g. branch rules).
+
+name: Update DDD snapshots
+
+on:
+  schedule:
+    - cron: '0 * * * *' # every hour UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ddd-snapshots
+  cancel-in-progress: false
+
+jobs:
+  update-snapshots:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # Default token can push when permissions.contents is write. For protected branches, add
+          # a PAT as repo secret GH_TOKEN and set: token: ${{ secrets.GH_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+          # If package.json is only inside intelligence/, set cache-dependency-path (uncomment one):
+          # cache-dependency-path: intelligence/package-lock.json
+
+      - name: Install dependencies (root)
+        run: npm ci
+        # If your Node project lives under intelligence/ instead of repo root, replace the block above with:
+        # working-directory: intelligence
+        # run: npm ci
+
+      - name: Fetch DDD data from Solana
+        env:
+          SOLANA_RPC_URL: ${{ secrets.SOLANA_RPC_URL }}
+          # If JSON is written to intelligence/data/ instead of data/ at repo root:
+          # DATA_DIR: intelligence/data
+          # Fail the job when no oracle PDA exists (default: script exits 0 and still writes JSON):
+          # FAIL_IF_ORACLE_MISSING: '1'
+        run: node scripts/fetch-ddd.js
+        # If the script lives under intelligence/scripts/:
+        # working-directory: intelligence
+        # run: node scripts/fetch-ddd.js
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/ || true
+          git add intelligence/data/ || true
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: refresh DDD snapshots $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          fi
