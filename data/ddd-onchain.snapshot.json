@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-13T14:45:19.878Z",
+  "generated_at": "2026-06-13T15:34:54.298Z",
   "dataset_status": "live",
   "runtime_note": "Account read succeeded via GitHub Actions / local script.",
   "solana_program_id": "AbjVyP3WaY9yMG8AT8vNcLHcNoFkT5dwT94SPQ8kddd",
@@ -22,6 +22,6 @@
     "stablecoin_market_cap_usd": 318031843312,
     "us_m2_usd": 22686000000000,
     "one_in_x": 71,
-    "last_updated": "2026-06-13T14:45:19.878Z"
+    "last_updated": "2026-06-13T15:34:54.298Z"
   }
 }
