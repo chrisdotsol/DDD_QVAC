@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-30T21:06:57.849Z",
+  "generated_at": "2026-08-30T22:07:33.971Z",
   "dataset_status": "live",
   "source_files": [
     "bot/fallback.json",
@@ -12,7 +12,7 @@
   "stablecoin_market_cap_usd": 318031843312,
   "us_m2_usd": 22686000000000,
   "one_in_x": 71,
-  "last_updated": "2026-08-30T21:06:57.849Z",
+  "last_updated": "2026-08-30T22:07:33.971Z",
   "issuers": [
     {
       "name": "Tether",
